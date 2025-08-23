@@ -344,18 +344,21 @@
       <div class="box">CTA kattintás<br><b id="kpiCta">0</b></div>
     </div>
   </aside>
-
-  <!-- ANALITIKA INTEGRÁCIÓK -->
-  <!-- GA4: cseréld le a G-XXXXXX azonosítót a sajátodra, ha használod. -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <!-- ANALITIKA INTEGRÁCIÓK: Google Analytics 4 bekötve -->
+  <!-- 1) Cseréld le a MEASUREMENT_ID-t a saját GA4 azonosítódra (pl. G-ABCDE12345). -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKLC3PMP36"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    // Kötelező config. A page_view eseményt mi is küldjük, de a GA4 auto page_view maradhat.
+    gtag('config', 'G-MEASUREMENT_ID');
+
+    // Opcionális: alap Consent Mode (állítsd be saját cookie banneredhez)
+    gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'granted', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });
   </script>
-  -->
-  <!-- Plausible (privacy friendly): cseréld a domain-t a sajátodra. -->
+  <!-- Plausible (privacy friendly) – jelenleg nem aktív, ha szeretnéd használni, vedd ki a kommentet és állítsd a domaint. -->
+  <!-- <script defer data-domain="sajat-domain.hu" src="https://plausible.io/js/script.js"></script> -->
   <!-- <script defer data-domain="sajat-domain.hu" src="https://plausible.io/js/script.js"></script> -->
 
   <script>
@@ -466,7 +469,19 @@
     });
 
     // Helper: események küldése GA4 / Plausible felé, ha be vannak kötve
-    function trackEvent(name, params={}){ debugEvent(name, params); gtagSafe('event', name, params); plausibleSafe(name, params); }
+    function trackEvent(name, params={}){
+      // Debug + küldés GA4/Plausible felé
+      debugEvent(name, params);
+      // Ajánlott GA4 eseményekre mappelés, ahol értelmes
+      if(name === 'contact_submit'){ gtagSafe('event','generate_lead', params); }
+      if(name === 'cta_click'){ gtagSafe('event','select_content', { ...params, content_type:'cta_button' }); }
+      if(name === 'video_open'){ gtagSafe('event','view_item', { ...params, item_category:'video' }); }
+      if(name === 'photo_open'){ gtagSafe('event','view_item', { ...params, item_category:'photo' }); }
+      if(name === 'tab_switch'){ gtagSafe('event','select_item', { item_list_name:'projects_tabs', item_name: params.tab }); }
+      // Eredeti egyedi eseménynév is menjen
+      gtagSafe('event', name, params);
+      plausibleSafe(name, params);
+    }
     function gtagSafe(){ if(window.gtag) { try{ window.gtag.apply(null, arguments); }catch(e){} } }
     function plausibleSafe(eventName, props){ if(window.plausible){ try{ window.plausible(eventName, { props }); } catch(e){} } }
 
