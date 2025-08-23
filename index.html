@@ -2,77 +2,115 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Krisz | Fejlesztő · Videós · Fotós</title>
-  <meta name="description" content="Krisz – webfejlesztő, videós és fotós portfólió. Élő összes-látogató számláló, projektek hamarosan." />
+  <meta name="description" content="Krisz – webfejlesztő, videós és fotós portfólió. Projektek (hamarosan), kapcsolat és valós idejű összes látogató számláló."/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer"/>
 
   <style>
+    /* ======= Alap ======= */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --primary:#6366f1;--primary-600:#4f46e5;--primary-light:#818cf8;
-      --gray-900:#0b0f16;--gray-850:#0f1520;--gray-800:#1f2937;--gray-700:#374151;--gray-600:#4b5563;--gray-400:#9ca3af;
-      --radius:12px
+      --primary:#6366f1;--primary-600:#4f46e5;--primary-300:#a5b4fc;
+      --bg:#0b0f16;--panel:#101624;--line:rgba(255,255,255,.08);--muted:#9aa0aa;--txt:#e7e9ee;
+      --radius:14px
     }
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,rgba(99,102,241,.10),transparent 60%),radial-gradient(1000px 500px at -20% 110%,rgba(129,140,248,.08),transparent 60%),var(--gray-900);color:#fff;line-height:1.6}
-    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 2rem}
+    body{
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      color:var(--txt); background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(99,102,241,.10), transparent 60%),
+        radial-gradient(900px 500px at -20% 110%, rgba(129,140,248,.08), transparent 60%),
+        var(--bg);
+      line-height:1.6
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
-    nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,15,22,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-    .logo{font-weight:800;letter-spacing:-.02em}.logo span{color:var(--primary-light)}
-    .nav-links{display:none;gap:1.25rem}
-    .nav-links a{color:var(--gray-400);text-decoration:none;font-weight:500}
-    .nav-links a:hover{color:#fff}
-    .resume-btn{display:none;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:10px;background:linear-gradient(180deg,var(--primary),var(--primary-600));color:#fff;font-weight:600;text-decoration:none;border:none}
-    .menu-btn{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:transparent;color:#fff}
-    .mobile-menu{display:none;position:fixed;inset:64px 0 auto 0;background:rgba(11,15,22,.98);border-bottom:1px solid rgba(255,255,255,.06);padding:1rem 2rem;z-index:49}
-    .mobile-menu a{display:block;padding:.75rem 0;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06)}
+    /* ======= Navigáció ======= */
+    nav{position:sticky;top:0;z-index:50;background:rgba(16,22,36,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{font-weight:800;letter-spacing:-.02em}
+    .logo span{color:var(--primary-300)}
+    .nav-links{display:none;gap:18px}
+    .nav-links a{color:#cfd3db;text-decoration:none;font-weight:600}
+    .nav-links a:hover{color:white}
+    .menu-btn{display:inline-grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:transparent;color:#fff}
+    .mobile-menu{display:none;position:fixed;inset:64px 0 auto 0;background:#0f1523;border-bottom:1px solid var(--line);padding:12px 20px}
+    .mobile-menu a{display:block;padding:12px 0;color:#fff;text-decoration:none;border-bottom:1px solid var(--line)}
+    @media (min-width:768px){.nav-links{display:flex}.menu-btn{display:none}}
 
-    .hero{display:grid;grid-template-columns:1fr;align-items:center;min-height:70vh;gap:2rem;padding:4rem 0 2rem}
-    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.12);color:#cdd0d7;border-radius:999px;font-size:.85rem}
-    .eyebrow i{color:var(--primary-light)}
-    .hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.1;margin:.75rem 0 1rem;letter-spacing:-.03em}
-    .gradient{background:linear-gradient(90deg,#fff,#c7d2fe 30%,#a5b4fc 55%,#93c5fd 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero p{color:#cdd0d7;max-width:60ch;font-size:1.1rem}
-    .hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.5rem}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.1rem;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,.08)}
-    .btn.primary{background:linear-gradient(180deg,var(--primary),var(--primary-600));color:#fff;border:none}.btn.secondary{color:#fff}
+    /* ======= Hero ======= */
+    .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;min-height:72vh;padding:48px 0 16px}
+    .tag{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:#cfd3db;font-size:.9rem}
+    .tag i{color:var(--primary-300)}
+    .hero h1{font-size:clamp(2.2rem,5vw,3.9rem);line-height:1.08;margin:10px 0 12px;letter-spacing:-.03em}
+    .grad{background:linear-gradient(90deg,#fff,var(--primary-300) 40%, #93c5fd 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:#cfd3db;max-width:62ch}
+    .btn{display:inline-flex;gap:8px;align-items:center;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid var(--line);color:#fff}
+    .btn.primary{background:linear-gradient(180deg,var(--primary),var(--primary-600));border:none}
+    .btn.secondary{background:transparent}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    @media (min-width:900px){.hero{grid-template-columns:1.15fr .85fr}}
 
-    .section-header{margin-bottom:1rem}.section-header h2{font-size:1.6rem;margin-bottom:.25rem}.section-header p{color:#cdd0d7}
-    .grid{display:grid;gap:1.25rem}.grid.cols-2{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr}
-    @media (min-width:768px){.nav-links{display:flex}.resume-btn{display:flex}.menu-btn{display:none}.hero{grid-template-columns:1.2fr .8fr}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-    @media (min-width:1024px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;position:relative}
-    .thumb{aspect-ratio:16/9;background:#0a0a0a;overflow:hidden}
-    .card img{width:100%;height:100%;object-fit:cover;display:block}
+    /* ======= Szekciók ======= */
+    section{padding:56px 0}
+    .section-header{margin-bottom:16px}
+    .section-header h2{font-size:1.65rem}
+    .section-header p{color:#cfd3db}
 
-    /* HAMAROSAN állapot a projektekhez */
-    .coming-soon .thumb{filter:blur(6px) saturate(0.3) brightness(0.7)}
+    /* ======= Tabs ======= */
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 14px}
+    .tab{padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02);color:#cfd3db;font-weight:700;cursor:pointer}
+    .tab.active{color:#fff;border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.14) inset}
+
+    .grid{display:grid;gap:14px}.cols-2{grid-template-columns:1fr}.cols-3{grid-template-columns:1fr}
+    @media (min-width:768px){.cols-2{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:1024px){.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    .card{position:relative}
+    .thumb{aspect-ratio:16/9;background:#0b0b0b;overflow:hidden}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* ======= Coming soon – minden kártyára ======= */
+    .coming-soon .thumb{filter:blur(6px) saturate(.35) brightness(.7)}
     .coming-soon::after{
       content:"HAMAROSAN"; position:absolute; inset:0; display:grid; place-items:center;
-      font-weight:800; letter-spacing:.15em; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.6);
       background:linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.45));
+      color:#fff; font-weight:800; letter-spacing:.18em; text-align:center
     }
     .coming-soon{pointer-events:none}
 
-    /* Bal ALSÓ mini kártya: Összes látogató */
+    /* ======= Kapcsolat ======= */
+    .contact-grid{display:grid;gap:16px;grid-template-columns:1fr}
+    @media (min-width:900px){.contact-grid{grid-template-columns:1.1fr .9fr}}
+    .input,.textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#fff}
+    .textarea{min-height:160px;resize:vertical}
+    .input:focus,.textarea:focus{outline:none;border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.14)}
+
+    /* ======= Footer ======= */
+    footer{border-top:1px solid var(--line);padding:22px 0 42px;margin-top:36px;color:#cfd3db;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* ======= Bal alsó mini kártya (Összes látogató) ======= */
     .mini-left{
-      position:fixed; left:16px; bottom:16px; z-index:70;
-      background:#0b0f16; border:1px solid rgba(99,102,241,.45); border-radius:12px;
-      box-shadow:0 10px 30px rgba(0,0,0,.35); padding:.75rem .9rem; min-width:200px
+      position:fixed;left:16px;bottom:16px;z-index:70;min-width:220px;
+      background:var(--panel);border:1px solid rgba(99,102,241,.45);border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);padding:10px 12px
     }
-    .mini-title{font-size:.9rem; color:#cdd0d7; margin-bottom:.25rem}
-    .mini-value{font-size:1.35rem; font-weight:800}
-    .mini-hint{font-size:.75rem; color:#9aa0aa; margin-top:.25rem}
-    .fade-in{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
+    .mini-title{font-size:.92rem;color:#cfd3db}
+    .mini-value{font-size:1.45rem;font-weight:800}
+    .mini-hint{font-size:.75rem;color:var(--muted);margin-top:2px}
+
+    /* Kis anim */
+    .fade-in{opacity:0;transform:translateY(8px);transition:opacity .6s, transform .6s}
     .fade-in.visible{opacity:1;transform:none}
   </style>
 </head>
 <body>
+  <!-- ======= NAV ======= -->
   <nav>
     <div class="container nav-inner">
       <div class="logo">Krisz<span>.</span></div>
@@ -82,7 +120,6 @@
         <a href="#about">Rólam</a>
         <a href="#contact">Kapcsolat</a>
       </div>
-      <a class="resume-btn" href="#" target="_blank" rel="noopener">Önéletrajz <i class="fa-solid fa-arrow-right"></i></a>
       <button class="menu-btn" id="menuBtn" aria-label="Menü"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
@@ -94,94 +131,142 @@
   </nav>
 
   <main class="container">
-    <!-- Hero -->
+    <!-- ======= HERO ======= -->
     <section id="home" class="hero">
       <div>
-        <span class="eyebrow fade-in"><i class="fa-solid fa-bolt"></i> Webfejlesztő · Videós · Fotós</span>
-        <h1 class="fade-in"><span class="gradient">Tiszta, gyors és élvezetes</span> digitális élményeket készítek.</h1>
-        <p class="fade-in">Weboldalak és alkalmazások UX fókuszú fejlesztése, branding videók és social tartalmak gyártása, valamint modern fotózás – egy kézből.</p>
-        <div class="hero-btns fade-in">
+        <span class="tag fade-in"><i class="fa-solid fa-bolt"></i> Webfejlesztő · Videós · Fotós</span>
+        <h1 class="fade-in"><span class="grad">Tiszta, gyors és élvezetes</span> digitális élményeket készítek.</h1>
+        <p class="fade-in">UX-fókuszú webfejlesztés, branding videók és karakteres fotók – egy kézből.</p>
+        <div class="hero-actions fade-in">
           <a class="btn primary" href="#projects"><i class="fa-solid fa-grid-2"></i> Munkáim</a>
           <a class="btn secondary" href="#contact"><i class="fa-regular fa-paper-plane"></i> Kapcsolat</a>
         </div>
       </div>
       <div class="fade-in">
-        <div class="card" style="overflow:hidden">
+        <div class="panel">
           <div class="thumb">
-            <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop" alt="Hero kép" loading="lazy"/>
+            <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop" alt="Hero kép" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projektek – mind “HAMAROSAN” -->
+    <!-- ======= PROJEKTEK – Kategóriák, MIND blur + HAMAROSAN ======= -->
     <section id="projects">
       <div class="section-header">
         <h2>Projektjeim</h2>
-        <p>Hamarosan jönnek a részletek. Addig is pár előnézet.</p>
+        <p>Az anyagok feltöltés alatt – addig is előnézetek.</p>
       </div>
-      <div class="grid cols-3">
-        <article class="card coming-soon">
-          <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+1" alt="Web Projekt 1" loading="lazy"></div>
-        </article>
-        <article class="card coming-soon">
-          <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt" alt="Videó Projekt" loading="lazy"></div>
-        </article>
-        <article class="card coming-soon">
-          <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt" alt="Fotó Projekt" loading="lazy"></div>
-        </article>
+
+      <div class="tabs" role="tablist" aria-label="Projekt kategóriák">
+        <button class="tab active" data-tab="web" role="tab" aria-selected="true">Web</button>
+        <button class="tab" data-tab="video" role="tab" aria-selected="false">Videó</button>
+        <button class="tab" data-tab="photo" role="tab" aria-selected="false">Fotó</button>
+      </div>
+
+      <!-- Web -->
+      <div id="tab-web" class="tab-panel">
+        <div class="grid cols-3">
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+1" alt="Web Projekt 1"></div>
+          </article>
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+2" alt="Web Projekt 2"></div>
+          </article>
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+3" alt="Web Projekt 3"></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Videó -->
+      <div id="tab-video" class="tab-panel" hidden>
+        <div class="grid cols-3">
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+1" alt="Videó Projekt 1"></div>
+          </article>
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+2" alt="Videó Projekt 2"></div>
+          </article>
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+3" alt="Videó Projekt 3"></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Fotó -->
+      <div id="tab-photo" class="tab-panel" hidden>
+        <div class="grid cols-3">
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+1" alt="Fotó Projekt 1"></div>
+          </article>
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+2" alt="Fotó Projekt 2"></div>
+          </article>
+          <article class="panel card coming-soon">
+            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+3" alt="Fotó Projekt 3"></div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Rólam -->
+    <!-- ======= RÓLAM ======= -->
     <section id="about">
       <div class="section-header">
         <h2>Rólam</h2>
         <p>Webfejlesztő, videós és fotós – modern, gyors és letisztult megoldásokkal.</p>
       </div>
+      <div class="panel" style="padding:18px">
+        <ul style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none">
+          <li><b>3+</b> év tapasztalat</li>
+          <li><b>20+</b> befejezett projekt</li>
+          <li><b>10+</b> elégedett ügyfél</li>
+          <li><b>2</b> díj</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Kapcsolat -->
+    <!-- ======= KAPCSOLAT ======= -->
     <section id="contact">
       <div class="section-header">
         <h2>Kapcsolat</h2>
         <p>Projekted van, együttműködnél vagy kérdésed van? Írj nyugodtan!</p>
       </div>
-      <div style="display:grid;gap:1rem;grid-template-columns:1fr 1fr">
-        <form id="contactForm">
-          <input class="input" placeholder="Név" required>
-          <input class="input" type="email" placeholder="Email" required>
-          <input class="input" placeholder="Tárgy" required>
-          <textarea class="textarea" placeholder="Üzeneted..." required></textarea>
-          <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Üzenet küldése</button>
-          <div id="formStatus" style="margin-top:.6rem;font-size:.95rem"></div>
-        </form>
-        <div>
-          <div class="card" style="padding:1.1rem">
-            <h3>Kapcsolati információk</h3>
-            <p style="margin-top:.6rem;color:#cdd0d7"><b>Email</b><br>krisz@portfolio.hu</p>
-            <p style="margin-top:.6rem;color:#cdd0d7"><b>Telefon</b><br>+36 1 234 5678</p>
-            <p style="margin-top:.6rem;color:#cdd0d7"><b>Helyszín</b><br>Budapest, Magyarország</p>
+      <div class="contact-grid">
+        <form id="contactForm" class="panel" style="padding:14px">
+          <div style="display:grid;gap:12px">
+            <input class="input" id="name" name="name" placeholder="Név" required>
+            <input class="input" id="email" name="email" type="email" placeholder="Email" required>
+            <input class="input" id="subject" name="subject" placeholder="Tárgy" required>
+            <textarea class="textarea" id="message" name="message" placeholder="Üzeneted..." required></textarea>
+            <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Üzenet küldése</button>
+            <div id="formStatus" style="font-size:.95rem"></div>
           </div>
-        </div>
+        </form>
+        <aside class="panel" style="padding:14px">
+          <h3>Kapcsolati információk</h3>
+          <p style="margin-top:8px;color:#cfd3db"><b>Email</b><br>krisz@portfolio.hu</p>
+          <p style="margin-top:8px;color:#cfd3db"><b>Telefon</b><br>+36 1 234 5678</p>
+          <p style="margin-top:8px;color:#cfd3db"><b>Helyszín</b><br>Budapest, Magyarország</p>
+        </aside>
       </div>
     </section>
   </main>
 
-  <footer class="container" style="border-top:1px solid rgba(255,255,255,.08);padding:2rem 0 4rem;margin-top:3rem;color:#cdd0d7">
-    <div>© <span id="currentYear"></span> Krisz. Minden jog fenntartva.</div>
-    <div>Teljesítmény: <span id="perfBadge">mérés...</span></div>
+  <footer class="container">
+    <div>© <span id="year"></span> Krisz. Minden jog fenntartva.</div>
+    <div>Teljesítmény: <span id="perf">mérés…</span></div>
   </footer>
 
-  <!-- Bal alsó MINI kártya -->
+  <!-- ======= Bal alsó mini kártya: Összes látogató (valós idő, Firebase) ======= -->
   <aside class="mini-left" id="miniCard" aria-live="polite">
     <div class="mini-title">Összes látogató (egyedi)</div>
     <div class="mini-value" id="totalVisitors">–</div>
     <div class="mini-hint" id="miniHint">Inicializálás…</div>
   </aside>
 
-  <!-- 🔧 Firebase config – TÖLTSD KI a sajátoddal a valós idejű globális számlálóhoz.
-       Ha üresen hagyod, "fejlesztői (helyi)" módban fut és csak a saját böngésződben számol. -->
+  <!-- 👉 Firebase config (opcionális, valós idejű globális számlálóhoz)
+       Ha üres, helyi demó mód indul. Töltsd ki a saját projekteddel. -->
   <script>
     const firebaseConfig = {
       // apiKey: "…",
@@ -193,72 +278,70 @@
       // appId: "…"
     };
   </script>
-  <!-- Firebase SDK-k -->
   <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-database-compat.js"></script>
 
   <script>
-    // UI apróságok
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    const mobileMenu = document.getElementById('mobileMenu');
-    document.getElementById('menuBtn').addEventListener('click', ()=>{ mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block'; });
-    const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});
-    document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
-    const perfBadge = document.getElementById('perfBadge');
-    window.addEventListener('load', ()=>{ const [fcp] = performance.getEntriesByType('paint').filter(p=>p.name==='first-contentful-paint'); perfBadge.textContent = fcp ? Math.round(fcp.startTime)+' ms FCP' : 'kész'; });
+    // ======= Kis UI logika =======
+    const yearEl=document.getElementById('year');yearEl.textContent=new Date().getFullYear();
+    const perfEl=document.getElementById('perf');window.addEventListener('load',()=>{const [fcp]=performance.getEntriesByType('paint').filter(p=>p.name==='first-contentful-paint');perfEl.textContent=fcp?Math.round(fcp.startTime)+' ms FCP':'kész'})
+    const mobileMenu=document.getElementById('mobileMenu');document.getElementById('menuBtn').addEventListener('click',()=>{mobileMenu.style.display=mobileMenu.style.display==='block'?'none':'block'})
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.fade-in').forEach(el=>io.observe(el))
 
-    // Kontakt form demo
-    const form = document.getElementById('contactForm'); const formStatus = document.getElementById('formStatus');
-    form.addEventListener('submit', async (e)=>{ e.preventDefault(); formStatus.style.color='#10b981'; formStatus.textContent='Az üzeneted sikeresen elküldve!'; setTimeout(()=>formStatus.textContent='', 4000); });
+    // ======= Tabs =======
+    const tabs=document.querySelectorAll('.tab');
+    const panels={web:document.getElementById('tab-web'),video:document.getElementById('tab-video'),photo:document.getElementById('tab-photo')};
+    function setTab(name){
+      tabs.forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+      Object.values(panels).forEach(p=>p.hidden=true);
+      const btn=[...tabs].find(b=>b.dataset.tab===name); if(btn){btn.classList.add('active');btn.setAttribute('aria-selected','true')}
+      panels[name].hidden=false;
+    }
+    tabs.forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab)));
 
-    /* ---------- Összes látogató MINI kártya (bal alsó) ---------- */
-    const totalVisitorsEl = document.getElementById('totalVisitors');
-    const miniHint = document.getElementById('miniHint');
+    // ======= Kapcsolat form (demo) =======
+    const form=document.getElementById('contactForm');const formStatus=document.getElementById('formStatus');
+    form.addEventListener('submit',async e=>{e.preventDefault();formStatus.style.color='#10b981';formStatus.textContent='Az üzeneted sikeresen elküldve!';setTimeout(()=>formStatus.textContent='',4000)})
 
-    const UID_KEY = 'krisz-uid';
-    let uid = localStorage.getItem(UID_KEY);
-    if(!uid){ uid = cryptoRandom(); localStorage.setItem(UID_KEY, uid); }
+    // ======= Összes látogató mini kártya =======
+    const totalVisitorsEl=document.getElementById('totalVisitors');
+    const miniHint=document.getElementById('miniHint');
+    const UID_KEY='krisz-uid';
+    let uid=localStorage.getItem(UID_KEY); if(!uid){uid=cryptoRandom();localStorage.setItem(UID_KEY,uid)}
 
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const hasConfig = firebaseConfig && Object.keys(firebaseConfig).length>0;
+    document.addEventListener('DOMContentLoaded',()=>{
+      const hasConfig=firebaseConfig && Object.keys(firebaseConfig).length>0;
       try{
-        if(hasConfig && window.firebase && firebase.initializeApp){
-          startFirebaseLive();
-        }else{
-          startLocalDev();
-        }
-      }catch(_){ startLocalDev(); }
+        if(hasConfig && window.firebase && firebase.initializeApp){ startFirebaseLive() }
+        else{ startLocalDemo() }
+      }catch(_){ startLocalDemo() }
     });
 
     function startFirebaseLive(){
-      miniHint.textContent = 'Valós idejű (Firebase)';
-      const app = firebase.initializeApp(firebaseConfig);
-      const db  = firebase.database();
-
-      // Egyedi látogatóként megjelöljük ezt az UID-t
-      const seenRef = db.ref('seen_uids/'+uid);
-      seenRef.set(true);
-
-      // Realtime: összes egyedi látogató = seen_uids kulcsainak száma
-      db.ref('seen_uids').on('value', snap=>{
-        const count = snap.exists() ? Object.keys(snap.val()).length : 0;
-        totalVisitorsEl.textContent = count.toLocaleString('hu-HU');
+      miniHint.textContent='Valós idejű (Firebase)';
+      firebase.initializeApp(firebaseConfig);
+      const db=firebase.database();
+      // Megjelöljük az egyedi felhasználót
+      db.ref('seen_uids/'+uid).set(true);
+      // Összes egyedi = kulcsok száma
+      db.ref('seen_uids').on('value',snap=>{
+        const count=snap.exists()?Object.keys(snap.val()).length:0;
+        totalVisitorsEl.textContent=count.toLocaleString('hu-HU');
       });
     }
 
-    // Fejlesztői (helyi) fallback – csak saját böngészőben számol, hogy lásd a működést
-    function startLocalDev(){
-      miniHint.textContent = 'Fejlesztői (helyi) mód';
-      const LS_KEY='krisz-local-uniques';
-      const s = readLS() || { uniques: [] };
-      if(!s.uniques.includes(uid)){ s.uniques.push(uid); saveLS(s); }
-      totalVisitorsEl.textContent = s.uniques.length.toLocaleString('hu-HU');
-
-      function readLS(){ try{return JSON.parse(localStorage.getItem(LS_KEY)||'null')}catch(_){return null} }
-      function saveLS(v){ try{localStorage.setItem(LS_KEY, JSON.stringify(v))}catch(_){} }
+    // Helyi (demó) – csak a saját böngésződ számít
+    function startLocalDemo(){
+      miniHint.textContent='Fejlesztői (helyi) mód';
+      const KEY='krisz-local-uniques';
+      const s=readLS()||{uniques:[]};
+      if(!s.uniques.includes(uid)){s.uniques.push(uid);saveLS(s)}
+      totalVisitorsEl.textContent=s.uniques.length.toLocaleString('hu-HU');
+      function readLS(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(_){return null}}
+      function saveLS(v){try{localStorage.setItem(KEY,JSON.stringify(v))}catch(_){}}      
     }
 
-    function cryptoRandom(){ const arr = new Uint32Array(4); (crypto||window.msCrypto).getRandomValues(arr); return Array.from(arr).map(x=>x.toString(16)).join(''); }
+    function cryptoRandom(){const arr=new Uint32Array(4);crypto.getRandomValues(arr);return Array.from(arr).map(x=>x.toString(16)).join('')}
   </script>
 </body>
 </html>
