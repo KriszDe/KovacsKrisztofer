@@ -214,10 +214,10 @@
     <!-- Jobb oldali tartalom -->
     <div class="panel" style="padding:20px">
       <ul class="stats">
-        <li class="stat"><b>3+</b> év tapasztalat</li>
-        <li class="stat"><b>20+</b> befejezett projekt</li>
+        <li class="stat"><b>2+</b> év tapasztalat</li>
+        <li class="stat"><b>5+</b> befejezett projekt</li>
         <li class="stat"><b>10+</b> elégedett ügyfél</li>
-        <li class="stat"><b>2</b> díj</li>
+        <li class="stat"><b>0</b> díj</li>
       </ul>
 
       <p style="margin-top:16px;color:#cfd3db">
@@ -240,30 +240,46 @@
 </section>
 
 <!-- KAPCSOLAT -->
-    <section id="contact">
-      <div class="section-header">
-        <h2>Kapcsolat</h2>
-        <p>Projekted van, együttműködnél vagy kérdésed van? Írj nyugodtan!</p>
+<section id="contact">
+  <div class="section-header">
+    <h2>Kapcsolat</h2>
+    <p>Projekted van, együttműködnél vagy kérdésed van? Írj nyugodtan!</p>
+  </div>
+  <div class="contact-grid">
+    <!-- Itt az űrlap panel helyett most overlay -->
+    <div class="panel" style="position:relative;padding:40px;text-align:center;overflow:hidden">
+      <!-- Overlay -->
+      <div style="
+        position:absolute;inset:0;
+        display:grid;place-items:center;
+        background:rgba(0,0,0,.55);
+        color:#fff;
+        font-size:2rem;
+        font-weight:800;
+        letter-spacing:.15em;
+        transform:rotate(-20deg);
+        pointer-events:none;
+      ">HAMAROSAN</div>
+
+      <!-- Email fallback -->
+      <div style="position:relative;z-index:2">
+        <p style="font-size:1.1rem;color:#cfd3db">
+          Addig is írj közvetlenül ide:  
+          <br><b style="color:#fff">kovacskrisztofer56@gmail.com</b>
+        </p>
       </div>
-      <div class="contact-grid">
-        <form id="contactForm" class="panel" style="padding:14px">
-          <div style="display:grid;gap:12px">
-            <input class="input" id="name" name="name" placeholder="Név" required>
-            <input class="input" id="email" name="email" type="email" placeholder="Email" required>
-            <input class="input" id="subject" name="subject" placeholder="Tárgy" required>
-            <textarea class="textarea" id="message" name="message" placeholder="Üzeneted..." required></textarea>
-            <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Üzenet küldése</button>
-            <div id="formStatus" style="font-size:.95rem"></div>
-          </div>
-        </form>
-        <aside class="panel" style="padding:14px">
-          <h3>Kapcsolati információk</h3>
-          <p style="margin-top:8px;color:#cfd3db"><b>Email</b><br>krisz@portfolio.hu</p>
-          <p style="margin-top:8px;color:#cfd3db"><b>Telefon</b><br>+36 1 234 5678</p>
-          <p style="margin-top:8px;color:#cfd3db"><b>Helyszín</b><br>Budapest, Magyarország</p>
-        </aside>
-      </div>
-    </section>
+    </div>
+
+    <!-- Jobb oldali kontakt info -->
+    <aside class="panel" style="padding:14px">
+      <h3>Kapcsolati információk</h3>
+      <p style="margin-top:8px;color:#cfd3db"><b>Email</b><br>kovacskrisztofer56@gmail.com</p>
+      <p style="margin-top:8px;color:#cfd3db"><b>Telefon</b><br>+36 30 258 2118</p>
+      <p style="margin-top:8px;color:#cfd3db"><b>Helyszín</b><br>Tapolca, Magyarország</p>
+    </aside>
+  </div>
+</section>
+
   </main>
 
   <footer class="container">
