@@ -344,19 +344,24 @@
       <div class="box">CTA kattintás<br><b id="kpiCta">0</b></div>
     </div>
   </aside>
-  <!-- ANALITIKA INTEGRÁCIÓK: Google Analytics 4 bekötve -->
-  <!-- 1) Cseréld le a MEASUREMENT_ID-t a saját GA4 azonosítódra (pl. G-ABCDE12345). -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BX0KSLR05L"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    // Kötelező config. A page_view eseményt mi is küldjük, de a GA4 auto page_view maradhat.
-    gtag('config', 'G-BX0KSLR05L');
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BX0KSLR05L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    // Opcionális: alap Consent Mode (állítsd be saját cookie banneredhez)
-    gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'granted', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });
-  </script>
+  // DebugView segít: fejlesztéskor legyen true
+  gtag('config', 'G-BX0KSLR05L', { debug_mode: true });
+
+  // Consent Mode – igazítsd a cookie banneredhez
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'granted',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied'
+  });
+</script>
   <!-- Plausible (privacy friendly) – jelenleg nem aktív, ha szeretnéd használni, vedd ki a kommentet és állítsd a domaint. -->
   <!-- <script defer data-domain="sajat-domain.hu" src="https://plausible.io/js/script.js"></script> -->
   <!-- <script defer data-domain="sajat-domain.hu" src="https://plausible.io/js/script.js"></script> -->
