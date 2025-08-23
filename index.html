@@ -199,29 +199,47 @@
       </div>
     </section>
 
-    <!-- RÓLAM – visszatéve -->
-    <section id="about">
-      <div class="section-header">
-        <h2>Rólam</h2>
-        <p>Webfejlesztő, videós és fotós – modern, gyors és letisztult megoldásokkal.</p>
-      </div>
-      <div class="about">
-        <div class="panel photo">
-          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="Profilkép (helyőrző)">
-        </div>
-        <div class="panel" style="padding:16px">
-          <ul class="stats">
-            <li class="stat"><b>3+</b> év tapasztalat</li>
-            <li class="stat"><b>20+</b> befejezett projekt</li>
-            <li class="stat"><b>10+</b> elégedett ügyfél</li>
-            <li class="stat"><b>2</b> díj</li>
-          </ul>
-          <p style="margin-top:12px;color:#cfd3db">Célom, hogy a márkád történetét vizuálisan és technikailag is erősre építsem – gyors, hozzáférhető weboldallal, ütős videóval és karakteres fotóval.</p>
-        </div>
-      </div>
-    </section>
+  <!-- RÓLAM -->
+<section id="about">
+  <div class="section-header">
+    <h2>Rólam</h2>
+    <p>Webfejlesztő, videós és fotós – modern, gyors és letisztult megoldásokkal.</p>
+  </div>
+  <div class="about">
+    <!-- Bal oldali kép -->
+    <div class="panel photo">
+      <img src="profile.jpg" alt="Profilkép">
+    </div>
 
-    <!-- KAPCSOLAT -->
+    <!-- Jobb oldali tartalom -->
+    <div class="panel" style="padding:20px">
+      <ul class="stats">
+        <li class="stat"><b>3+</b> év tapasztalat</li>
+        <li class="stat"><b>20+</b> befejezett projekt</li>
+        <li class="stat"><b>10+</b> elégedett ügyfél</li>
+        <li class="stat"><b>2</b> díj</li>
+      </ul>
+
+      <p style="margin-top:16px;color:#cfd3db">
+        Szenvedélyem a digitális világ: tiszta és gyors weboldalakat készítek, emlékezetes
+        videókat vágok, és erős vizuális fotókkal támogatom a márkákat. 
+      </p>
+
+      <!-- ÚJ: skill lista ikonokkal -->
+      <div style="margin-top:20px">
+        <h3 style="font-size:1.1rem;margin-bottom:10px">Erősségeim</h3>
+        <ul style="list-style:none;display:grid;gap:10px;padding:0">
+          <li><i class="fa-solid fa-code" style="color:var(--primary-300);margin-right:6px"></i> Webfejlesztés (HTML, CSS, JS)</li>
+          <li><i class="fa-solid fa-video" style="color:var(--primary-300);margin-right:6px"></i> Videóvágás és utómunka</li>
+          <li><i class="fa-solid fa-camera" style="color:var(--primary-300);margin-right:6px"></i> Kreatív fotózás és retus</li>
+          <li><i class="fa-solid fa-rocket" style="color:var(--primary-300);margin-right:6px"></i> Márkaépítő szemlélet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KAPCSOLAT -->
     <section id="contact">
       <div class="section-header">
         <h2>Kapcsolat</h2>
@@ -252,29 +270,6 @@
     <div>© <span id="year"></span> Krisz. Minden jog fenntartva.</div>
     <div>Teljesítmény: <span id="perf">mérés…</span></div>
   </footer>
-
-  <!-- Bal alsó mini kártya: Összes látogató -->
-  <aside class="mini-left" id="miniCard" aria-live="polite">
-    <div class="mini-title">Összes látogató (egyedi)</div>
-    <div class="mini-value" id="totalVisitors">–</div>
-    <div class="mini-hint" id="miniHint">Inicializálás…</div>
-  </aside>
-
-  <!-- Firebase config – ha üres, helyi demó mód fut -->
-  <script>
-    const firebaseConfig = {
-      // apiKey: "…",
-      // authDomain: "…",
-      // databaseURL: "https://<PROJECT-ID>-default-rtdb.europe-west1.firebasedatabase.app",
-      // projectId: "…",
-      // storageBucket: "…",
-      // messagingSenderId: "…",
-      // appId: "…"
-    };
-  </script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-database-compat.js"></script>
-
   <script>
     // UI apróságok
     const yearEl=document.getElementById('year');yearEl.textContent=new Date().getFullYear();
