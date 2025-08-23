@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Krisz | Fejlesztő · Videós · Fotós</title>
-  <meta name="description" content="Krisz – webfejlesztő, videós és fotós portfólió. Projektek (hamarosan), kapcsolat és valós idejű összes látogató számláló."/>
+  <meta name="description" content="Krisz – webfejlesztő, videós és fotós portfólió. Projektek (hamarosan), Rólam, Kapcsolat és valós idejű összes látogató számláló."/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
-    /* ======= Alap ======= */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --primary:#6366f1;--primary-600:#4f46e5;--primary-300:#a5b4fc;
@@ -20,7 +19,8 @@
     html{scroll-behavior:smooth}
     body{
       font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      color:var(--txt); background:
+      color:var(--txt);
+      background:
         radial-gradient(1200px 600px at 80% -10%, rgba(99,102,241,.10), transparent 60%),
         radial-gradient(900px 500px at -20% 110%, rgba(129,140,248,.08), transparent 60%),
         var(--bg);
@@ -28,21 +28,20 @@
     }
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
-    /* ======= Navigáció ======= */
+    /* NAV */
     nav{position:sticky;top:0;z-index:50;background:rgba(16,22,36,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{font-weight:800;letter-spacing:-.02em}
-    .logo span{color:var(--primary-300)}
+    .logo{font-weight:800;letter-spacing:-.02em}.logo span{color:var(--primary-300)}
     .nav-links{display:none;gap:18px}
     .nav-links a{color:#cfd3db;text-decoration:none;font-weight:600}
-    .nav-links a:hover{color:white}
+    .nav-links a:hover{color:#fff}
     .menu-btn{display:inline-grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:transparent;color:#fff}
     .mobile-menu{display:none;position:fixed;inset:64px 0 auto 0;background:#0f1523;border-bottom:1px solid var(--line);padding:12px 20px}
     .mobile-menu a{display:block;padding:12px 0;color:#fff;text-decoration:none;border-bottom:1px solid var(--line)}
     @media (min-width:768px){.nav-links{display:flex}.menu-btn{display:none}}
 
-    /* ======= Hero ======= */
-    .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;min-height:72vh;padding:48px 0 16px}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;min-height:60vh;padding:48px 0 16px}
     .tag{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:#cfd3db;font-size:.9rem}
     .tag i{color:var(--primary-300)}
     .hero h1{font-size:clamp(2.2rem,5vw,3.9rem);line-height:1.08;margin:10px 0 12px;letter-spacing:-.03em}
@@ -56,13 +55,13 @@
 
     .panel{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 
-    /* ======= Szekciók ======= */
+    /* Szekciók */
     section{padding:56px 0}
     .section-header{margin-bottom:16px}
     .section-header h2{font-size:1.65rem}
     .section-header p{color:#cfd3db}
 
-    /* ======= Tabs ======= */
+    /* Tabs */
     .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 14px}
     .tab{padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02);color:#cfd3db;font-weight:700;cursor:pointer}
     .tab.active{color:#fff;border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.14) inset}
@@ -75,7 +74,7 @@
     .thumb{aspect-ratio:16/9;background:#0b0b0b;overflow:hidden}
     .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 
-    /* ======= Coming soon – minden kártyára ======= */
+    /* Coming Soon minden kártyára */
     .coming-soon .thumb{filter:blur(6px) saturate(.35) brightness(.7)}
     .coming-soon::after{
       content:"HAMAROSAN"; position:absolute; inset:0; display:grid; place-items:center;
@@ -84,17 +83,26 @@
     }
     .coming-soon{pointer-events:none}
 
-    /* ======= Kapcsolat ======= */
+    /* RÓLAM */
+    .about{display:grid;grid-template-columns:1fr;gap:16px}
+    @media (min-width:900px){.about{grid-template-columns:.9fr 1.1fr}}
+    .about .photo{aspect-ratio:1;border-radius:16px;overflow:hidden;border:2px solid var(--line)}
+    .about .photo img{width:100%;height:100%;object-fit:cover}
+    .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none}
+    .stat{background:rgba(255,255,255,.03);border:1px solid var(--line);padding:12px;border-radius:12px}
+    .stat b{color:var(--primary-300)}
+
+    /* Kapcsolat */
     .contact-grid{display:grid;gap:16px;grid-template-columns:1fr}
     @media (min-width:900px){.contact-grid{grid-template-columns:1.1fr .9fr}}
     .input,.textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#fff}
     .textarea{min-height:160px;resize:vertical}
     .input:focus,.textarea:focus{outline:none;border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.14)}
 
-    /* ======= Footer ======= */
+    /* Footer */
     footer{border-top:1px solid var(--line);padding:22px 0 42px;margin-top:36px;color:#cfd3db;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-    /* ======= Bal alsó mini kártya (Összes látogató) ======= */
+    /* Bal alsó mini kártya */
     .mini-left{
       position:fixed;left:16px;bottom:16px;z-index:70;min-width:220px;
       background:var(--panel);border:1px solid rgba(99,102,241,.45);border-radius:12px;
@@ -104,13 +112,12 @@
     .mini-value{font-size:1.45rem;font-weight:800}
     .mini-hint{font-size:.75rem;color:var(--muted);margin-top:2px}
 
-    /* Kis anim */
     .fade-in{opacity:0;transform:translateY(8px);transition:opacity .6s, transform .6s}
     .fade-in.visible{opacity:1;transform:none}
   </style>
 </head>
 <body>
-  <!-- ======= NAV ======= -->
+  <!-- NAV -->
   <nav>
     <div class="container nav-inner">
       <div class="logo">Krisz<span>.</span></div>
@@ -131,7 +138,7 @@
   </nav>
 
   <main class="container">
-    <!-- ======= HERO ======= -->
+    <!-- HERO -->
     <section id="home" class="hero">
       <div>
         <span class="tag fade-in"><i class="fa-solid fa-bolt"></i> Webfejlesztő · Videós · Fotós</span>
@@ -151,7 +158,7 @@
       </div>
     </section>
 
-    <!-- ======= PROJEKTEK – Kategóriák, MIND blur + HAMAROSAN ======= -->
+    <!-- PROJEKTEK – blur + HAMAROSAN minden kártyán -->
     <section id="projects">
       <div class="section-header">
         <h2>Projektjeim</h2>
@@ -167,66 +174,54 @@
       <!-- Web -->
       <div id="tab-web" class="tab-panel">
         <div class="grid cols-3">
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+1" alt="Web Projekt 1"></div>
-          </article>
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+2" alt="Web Projekt 2"></div>
-          </article>
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+3" alt="Web Projekt 3"></div>
-          </article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+1" alt="Web Projekt 1"></div></article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+2" alt="Web Projekt 2"></div></article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+3" alt="Web Projekt 3"></div></article>
         </div>
       </div>
 
       <!-- Videó -->
       <div id="tab-video" class="tab-panel" hidden>
         <div class="grid cols-3">
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+1" alt="Videó Projekt 1"></div>
-          </article>
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+2" alt="Videó Projekt 2"></div>
-          </article>
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+3" alt="Videó Projekt 3"></div>
-          </article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+1" alt="Videó Projekt 1"></div></article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+2" alt="Videó Projekt 2"></div></article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt+3" alt="Videó Projekt 3"></div></article>
         </div>
       </div>
 
       <!-- Fotó -->
       <div id="tab-photo" class="tab-panel" hidden>
         <div class="grid cols-3">
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+1" alt="Fotó Projekt 1"></div>
-          </article>
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+2" alt="Fotó Projekt 2"></div>
-          </article>
-          <article class="panel card coming-soon">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+3" alt="Fotó Projekt 3"></div>
-          </article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+1" alt="Fotó Projekt 1"></div></article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+2" alt="Fotó Projekt 2"></div></article>
+          <article class="panel card coming-soon"><div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt+3" alt="Fotó Projekt 3"></div></article>
         </div>
       </div>
     </section>
 
-    <!-- ======= RÓLAM ======= -->
+    <!-- RÓLAM – visszatéve -->
     <section id="about">
       <div class="section-header">
         <h2>Rólam</h2>
         <p>Webfejlesztő, videós és fotós – modern, gyors és letisztult megoldásokkal.</p>
       </div>
-      <div class="panel" style="padding:18px">
-        <ul style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none">
-          <li><b>3+</b> év tapasztalat</li>
-          <li><b>20+</b> befejezett projekt</li>
-          <li><b>10+</b> elégedett ügyfél</li>
-          <li><b>2</b> díj</li>
-        </ul>
+      <div class="about">
+        <div class="panel photo">
+          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="Profilkép (helyőrző)">
+        </div>
+        <div class="panel" style="padding:16px">
+          <ul class="stats">
+            <li class="stat"><b>3+</b> év tapasztalat</li>
+            <li class="stat"><b>20+</b> befejezett projekt</li>
+            <li class="stat"><b>10+</b> elégedett ügyfél</li>
+            <li class="stat"><b>2</b> díj</li>
+          </ul>
+          <p style="margin-top:12px;color:#cfd3db">Célom, hogy a márkád történetét vizuálisan és technikailag is erősre építsem – gyors, hozzáférhető weboldallal, ütős videóval és karakteres fotóval.</p>
+        </div>
       </div>
     </section>
 
-    <!-- ======= KAPCSOLAT ======= -->
+    <!-- KAPCSOLAT -->
     <section id="contact">
       <div class="section-header">
         <h2>Kapcsolat</h2>
@@ -258,15 +253,14 @@
     <div>Teljesítmény: <span id="perf">mérés…</span></div>
   </footer>
 
-  <!-- ======= Bal alsó mini kártya: Összes látogató (valós idő, Firebase) ======= -->
+  <!-- Bal alsó mini kártya: Összes látogató -->
   <aside class="mini-left" id="miniCard" aria-live="polite">
     <div class="mini-title">Összes látogató (egyedi)</div>
     <div class="mini-value" id="totalVisitors">–</div>
     <div class="mini-hint" id="miniHint">Inicializálás…</div>
   </aside>
 
-  <!-- 👉 Firebase config (opcionális, valós idejű globális számlálóhoz)
-       Ha üres, helyi demó mód indul. Töltsd ki a saját projekteddel. -->
+  <!-- Firebase config – ha üres, helyi demó mód fut -->
   <script>
     const firebaseConfig = {
       // apiKey: "…",
@@ -282,13 +276,13 @@
   <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-database-compat.js"></script>
 
   <script>
-    // ======= Kis UI logika =======
+    // UI apróságok
     const yearEl=document.getElementById('year');yearEl.textContent=new Date().getFullYear();
     const perfEl=document.getElementById('perf');window.addEventListener('load',()=>{const [fcp]=performance.getEntriesByType('paint').filter(p=>p.name==='first-contentful-paint');perfEl.textContent=fcp?Math.round(fcp.startTime)+' ms FCP':'kész'})
     const mobileMenu=document.getElementById('mobileMenu');document.getElementById('menuBtn').addEventListener('click',()=>{mobileMenu.style.display=mobileMenu.style.display==='block'?'none':'block'})
     const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.fade-in').forEach(el=>io.observe(el))
 
-    // ======= Tabs =======
+    // Tabs
     const tabs=document.querySelectorAll('.tab');
     const panels={web:document.getElementById('tab-web'),video:document.getElementById('tab-video'),photo:document.getElementById('tab-photo')};
     function setTab(name){
@@ -299,11 +293,11 @@
     }
     tabs.forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab)));
 
-    // ======= Kapcsolat form (demo) =======
+    // Kontakt form (demo)
     const form=document.getElementById('contactForm');const formStatus=document.getElementById('formStatus');
     form.addEventListener('submit',async e=>{e.preventDefault();formStatus.style.color='#10b981';formStatus.textContent='Az üzeneted sikeresen elküldve!';setTimeout(()=>formStatus.textContent='',4000)})
 
-    // ======= Összes látogató mini kártya =======
+    // Összes látogató (egyedi) – Firebase valós idejű + helyi demó fallback
     const totalVisitorsEl=document.getElementById('totalVisitors');
     const miniHint=document.getElementById('miniHint');
     const UID_KEY='krisz-uid';
@@ -330,7 +324,6 @@
       });
     }
 
-    // Helyi (demó) – csak a saját böngésződ számít
     function startLocalDemo(){
       miniHint.textContent='Fejlesztői (helyi) mód';
       const KEY='krisz-local-uniques';
