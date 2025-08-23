@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Krisz | Fejlesztő · Videós · Fotós</title>
-  <meta name="description" content="Krisz – webfejlesztő, videós és fotós portfólió: webprojektek, videók és fotók, kapcsolat és élő látogatottsági kártya." />
+  <meta name="description" content="Krisz – webfejlesztő, videós és fotós portfólió. Élő összes-látogató számláló, projektek hamarosan." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -13,18 +13,16 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --primary:#6366f1;--primary-600:#4f46e5;--primary-light:#818cf8;
-      --gray-900:#0b0f16;--gray-850:#0f1520;--gray-800:#1f2937;--gray-700:#374151;--gray-600:#4b5563;--gray-400:#9ca3af;--gray-300:#d1d5db;
+      --gray-900:#0b0f16;--gray-850:#0f1520;--gray-800:#1f2937;--gray-700:#374151;--gray-600:#4b5563;--gray-400:#9ca3af;
       --radius:12px
     }
     html{scroll-behavior:smooth}
     body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,rgba(99,102,241,.10),transparent 60%),radial-gradient(1000px 500px at -20% 110%,rgba(129,140,248,.08),transparent 60%),var(--gray-900);color:#fff;line-height:1.6}
     .container{width:100%;max-width:1200px;margin:0 auto;padding:0 2rem}
 
-    /* Nav */
     nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,15,22,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-    .logo{font-weight:800;letter-spacing:-.02em}
-    .logo span{color:var(--primary-light)}
+    .logo{font-weight:800;letter-spacing:-.02em}.logo span{color:var(--primary-light)}
     .nav-links{display:none;gap:1.25rem}
     .nav-links a{color:var(--gray-400);text-decoration:none;font-weight:500}
     .nav-links a:hover{color:#fff}
@@ -33,88 +31,45 @@
     .mobile-menu{display:none;position:fixed;inset:64px 0 auto 0;background:rgba(11,15,22,.98);border-bottom:1px solid rgba(255,255,255,.06);padding:1rem 2rem;z-index:49}
     .mobile-menu a{display:block;padding:.75rem 0;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06)}
 
-    /* Hero */
     .hero{display:grid;grid-template-columns:1fr;align-items:center;min-height:70vh;gap:2rem;padding:4rem 0 2rem}
-    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.12);color:var(--gray-300);border-radius:999px;font-size:.85rem}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.12);color:#cdd0d7;border-radius:999px;font-size:.85rem}
     .eyebrow i{color:var(--primary-light)}
     .hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.1;margin:.75rem 0 1rem;letter-spacing:-.03em}
-    .hero h1 .gradient{background:linear-gradient(90deg,#fff,#c7d2fe 30%,#a5b4fc 55%,#93c5fd 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero p{color:var(--gray-300);max-width:60ch;font-size:1.1rem}
+    .gradient{background:linear-gradient(90deg,#fff,#c7d2fe 30%,#a5b4fc 55%,#93c5fd 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:#cdd0d7;max-width:60ch;font-size:1.1rem}
     .hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.5rem}
     .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.1rem;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,.08)}
-    .btn.primary{background:linear-gradient(180deg,var(--primary),var(--primary-600));color:#fff;border:none}
-    .btn.secondary{color:#fff}
+    .btn.primary{background:linear-gradient(180deg,var(--primary),var(--primary-600));color:#fff;border:none}.btn.secondary{color:#fff}
 
-    /* Tabs */
-    .tabs{display:flex;gap:.75rem;flex-wrap:wrap;margin:2.5rem 0 1.25rem}
-    .tab{padding:.5rem .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--gray-300);background:rgba(255,255,255,.02);cursor:pointer;font-weight:600}
-    .tab.active{color:#fff;border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.15) inset}
-
-    /* Grid */
-    .grid{display:grid;gap:1.25rem}
-    .grid.cols-2{grid-template-columns:1fr}
-    .grid.cols-3{grid-template-columns:1fr}
+    .section-header{margin-bottom:1rem}.section-header h2{font-size:1.6rem;margin-bottom:.25rem}.section-header p{color:#cdd0d7}
+    .grid{display:grid;gap:1.25rem}.grid.cols-2{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr}
     @media (min-width:768px){.nav-links{display:flex}.resume-btn{display:flex}.menu-btn{display:none}.hero{grid-template-columns:1.2fr .8fr}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:1024px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
 
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;transition:transform .25s ease,border-color .25s}
-    .card:hover{transform:translateY(-4px);border-color:rgba(99,102,241,.35)}
-    .card .thumb{aspect-ratio:16/9;background:#0a0a0a;overflow:hidden}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;position:relative}
+    .thumb{aspect-ratio:16/9;background:#0a0a0a;overflow:hidden}
     .card img{width:100%;height:100%;object-fit:cover;display:block}
-    .card .content{padding:1rem}
-    .card h3{font-size:1.05rem;margin-bottom:.35rem}
-    .tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
-    .tag{font-size:.75rem;padding:.2rem .5rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--gray-300)}
-    .video-badge{position:absolute;top:.6rem;left:.6rem;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.15);padding:.25rem .5rem;border-radius:8px;font-size:.8rem}
 
-    /* Masonry */
-    .masonry{column-count:1;column-gap:1rem}
-    .masonry-item{break-inside:avoid;margin-bottom:1rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .masonry-item img{width:100%;display:block}
-    @media (min-width:768px){.masonry{column-count:2}}
-    @media (min-width:1024px){.masonry{column-count:3}}
+    /* HAMAROSAN állapot a projektekhez */
+    .coming-soon .thumb{filter:blur(6px) saturate(0.3) brightness(0.7)}
+    .coming-soon::after{
+      content:"HAMAROSAN"; position:absolute; inset:0; display:grid; place-items:center;
+      font-weight:800; letter-spacing:.15em; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.6);
+      background:linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.45));
+    }
+    .coming-soon{pointer-events:none}
 
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.85);z-index:60}
-    .lightbox.open{display:grid}
-    .lightbox img,.lightbox iframe{max-width:90vw;max-height:80vh;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#000}
-    .lightbox .close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff}
-
-    section{padding:4rem 0}
-    .section-header{margin-bottom:1rem}
-    .section-header h2{font-size:1.6rem;margin-bottom:.25rem}
-    .section-header p{color:var(--gray-300)}
-
-    /* About */
-    .about{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
-    @media (min-width:900px){.about{grid-template-columns:.9fr 1.1fr}}
-    .about .photo{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;border:2px solid rgba(255,255,255,.15)}
-    .about .photo img{width:100%;height:100%;object-fit:cover}
-    .about .numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
-    .stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:1rem;border-radius:12px}
-    .stat h4{color:var(--primary-light);font-size:1.4rem}
-
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
-    @media (min-width:900px){.contact-grid{grid-template-columns:1.2fr .8fr}}
-    .input,.textarea{width:100%;padding:.85rem 1rem;border-radius:10px;background:rgba(255,255,255,.03);color:#fff;border:1px solid rgba(255,255,255,.1)}
-    .input:focus,.textarea:focus{outline:none;border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.15)}
-    .textarea{min-height:160px;resize:vertical}
-
-    footer{padding:2rem 0 4rem;border-top:1px solid rgba(255,255,255,.08);margin-top:3rem;color:var(--gray-400);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-
+    /* Bal ALSÓ mini kártya: Összes látogató */
+    .mini-left{
+      position:fixed; left:16px; bottom:16px; z-index:70;
+      background:#0b0f16; border:1px solid rgba(99,102,241,.45); border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35); padding:.75rem .9rem; min-width:200px
+    }
+    .mini-title{font-size:.9rem; color:#cdd0d7; margin-bottom:.25rem}
+    .mini-value{font-size:1.35rem; font-weight:800}
+    .mini-hint{font-size:.75rem; color:#9aa0aa; margin-top:.25rem}
     .fade-in{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
     .fade-in.visible{opacity:1;transform:none}
-
-    /* LIVE ANALYTICS CARD */
-    .live-card{position:fixed;right:16px;bottom:16px;background:#0b0f16;border:1px solid rgba(99,102,241,.4);border-radius:14px;padding:1rem 1rem 0.85rem;min-width:260px;z-index:70;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    .live-card header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
-    .live-card h4{font-size:1rem}
-    .live-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
-    .live-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.6rem}
-    .badge{font-size:.75rem;color:var(--gray-300)}
-    .live-small{font-size:.8rem;color:var(--gray-400);margin-top:.4rem}
-    .live-num{font-size:1.1rem;font-weight:700}
   </style>
 </head>
 <body>
@@ -159,102 +114,30 @@
       </div>
     </section>
 
-    <!-- Projektek -->
+    <!-- Projektek – mind “HAMAROSAN” -->
     <section id="projects">
       <div class="section-header">
         <h2>Projektjeim</h2>
-        <p>Válogatás a legfrissebb webes, videós és fotós munkáimból.</p>
+        <p>Hamarosan jönnek a részletek. Addig is pár előnézet.</p>
       </div>
-
-      <div class="tabs" role="tablist" aria-label="Projekt kategóriák">
-        <button class="tab active" data-tab="web" role="tab" aria-selected="true">Web</button>
-        <button class="tab" data-tab="video" role="tab" aria-selected="false">Videó</button>
-        <button class="tab" data-tab="photo" role="tab" aria-selected="false">Fotó</button>
-      </div>
-
-      <div class="tab-panel" id="tab-web" role="tabpanel">
-        <div class="grid cols-3" id="webGrid">
-          <article class="card project" data-title="Fivem Dashboard" data-tags="HTML,CSS,JS">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fivem+Dashboard" alt="Fivem Dashboard" loading="lazy"></div>
-            <div class="content">
-              <h3>Fivem Dashboard</h3>
-              <p>Vállalati dashboard újratervezése jobb UX-szel.</p>
-              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-            </div>
-          </article>
-          <article class="card project" data-title="RTK Webshop" data-tags="HTML,CSS,JS">
-            <div class="thumb"><img src="https://via.placeholder.com/800x450?text=RTK+Webshop" alt="RTK Webshop" loading="lazy"></div>
-            <div class="content">
-              <h3>RTK Webshop</h3>
-              <p>Online áruház termékkatalógussal és kosárral.</p>
-              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="tab-video" role="tabpanel" hidden>
-        <div class="grid cols-2" id="videoGrid">
-          <article class="card video" data-title="Brand film – Mintacég">
-            <div class="thumb" style="position:relative">
-              <span class="video-badge"><i class="fa-solid fa-play"></i> Videó</span>
-              <img src="https://img.youtube.com/vi/ScMzIvxBSi4/hqdefault.jpg" alt="Brand film – Mintacég" loading="lazy">
-            </div>
-            <div class="content">
-              <h3>Brand film – Mintacég</h3>
-              <p>1:10 perc | Narratív márkavideó.</p>
-              <div class="tags"><span class="tag">Filmezés</span><span class="tag">Vágás</span></div>
-            </div>
-            <template class="video-src">https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&rel=0</template>
-          </article>
-
-          <article class="card video" data-title="Reklám spot – Termék X">
-            <div class="thumb" style="position:relative">
-              <span class="video-badge"><i class="fa-solid fa-play"></i> Videó</span>
-              <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Reklám spot – Termék X" loading="lazy">
-            </div>
-            <div class="content">
-              <h3>Reklám spot – Termék X</h3>
-              <p>0:30 perc | Social kampány.</p>
-              <div class="tags"><span class="tag">Kreatív</span><span class="tag">Vágás</span></div>
-            </div>
-            <template class="video-src">https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0</template>
-          </article>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="tab-photo" role="tabpanel" hidden>
-        <div class="masonry" id="photoMasonry">
-          <figure class="masonry-item photo" data-title="Portré – Anna">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1600&auto=format&fit=crop" alt="Portré – Anna" loading="lazy">
-            <figcaption style="padding:.6rem 1rem;color:var(--gray-300)">Portré – Anna</figcaption>
-          </figure>
-          <figure class="masonry-item photo" data-title="Városi hangulat">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop" alt="Városi hangulat" loading="lazy">
-            <figcaption style="padding:.6rem 1rem;color:var(--gray-300)">Városi hangulat</figcaption>
-          </figure>
-          <figure class="masonry-item photo" data-title="Termékfotó – Headphones">
-            <img src="https://images.unsplash.com/photo-1518441982124-1d5b2a1e3849?q=80&w=1600&auto=format&fit=crop" alt="Termékfotó – Headphones" loading="lazy">
-            <figcaption style="padding:.6rem 1rem;color:var(--gray-300)">Termékfotó – Headphones</figcaption>
-          </figure>
-        </div>
+      <div class="grid cols-3">
+        <article class="card coming-soon">
+          <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Web+Projekt+1" alt="Web Projekt 1" loading="lazy"></div>
+        </article>
+        <article class="card coming-soon">
+          <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Vide%C3%B3+Projekt" alt="Videó Projekt" loading="lazy"></div>
+        </article>
+        <article class="card coming-soon">
+          <div class="thumb"><img src="https://via.placeholder.com/800x450?text=Fot%C3%B3+Projekt" alt="Fotó Projekt" loading="lazy"></div>
+        </article>
       </div>
     </section>
 
     <!-- Rólam -->
     <section id="about">
-      <div class="about">
-        <div class="photo fade-in"><img src="profile.jpg" alt="Profilkép"></div>
-        <div>
-          <h2 class="fade-in">Rólam</h2>
-          <p class="fade-in">Webfejlesztő, videós és fotós vagyok. Célom, hogy a márkád történetét vizuálisan és technikailag is erősre építsem – gyors, hozzáférhető weboldallal, ütős videóval és karakteres fotóval.</p>
-          <div class="numbers fade-in">
-            <div class="stat"><h4>3+</h4><div>Év tapasztalat</div></div>
-            <div class="stat"><h4>20+</h4><div>Befejezett projekt</div></div>
-            <div class="stat"><h4>10+</h4><div>Elégedett ügyfél</div></div>
-            <div class="stat"><h4>2</h4><div>Díj</div></div>
-          </div>
-        </div>
+      <div class="section-header">
+        <h2>Rólam</h2>
+        <p>Webfejlesztő, videós és fotós – modern, gyors és letisztult megoldásokkal.</p>
       </div>
     </section>
 
@@ -264,80 +147,42 @@
         <h2>Kapcsolat</h2>
         <p>Projekted van, együttműködnél vagy kérdésed van? Írj nyugodtan!</p>
       </div>
-      <div class="contact-grid">
-        <form class="fade-in" id="contactForm">
-          <div style="display:grid;gap:1rem;grid-template-columns:1fr">
-            <input class="input" id="name" name="name" placeholder="Név" required>
-            <input class="input" id="email" name="email" type="email" placeholder="Email" required>
-          </div>
-          <input class="input" id="subject" name="subject" placeholder="Tárgy" required>
-          <textarea class="textarea" id="message" name="message" placeholder="Üzeneted..." required></textarea>
-          <button class="btn primary" type="submit" id="submitBtn"><i class="fa-regular fa-paper-plane"></i> Üzenet küldése</button>
+      <div style="display:grid;gap:1rem;grid-template-columns:1fr 1fr">
+        <form id="contactForm">
+          <input class="input" placeholder="Név" required>
+          <input class="input" type="email" placeholder="Email" required>
+          <input class="input" placeholder="Tárgy" required>
+          <textarea class="textarea" placeholder="Üzeneted..." required></textarea>
+          <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Üzenet küldése</button>
           <div id="formStatus" style="margin-top:.6rem;font-size:.95rem"></div>
         </form>
-        <aside class="fade-in">
-          <div class="card" style="padding:1.25rem">
+        <div>
+          <div class="card" style="padding:1.1rem">
             <h3>Kapcsolati információk</h3>
-            <div style="margin-top:1rem;color:var(--gray-300)">
-              <p><b>Email</b><br>krisz@portfolio.hu</p>
-              <p style="margin-top:.6rem"><b>Telefon</b><br>+36 1 234 5678</p>
-              <p style="margin-top:.6rem"><b>Helyszín</b><br>Budapest, Magyarország</p>
-            </div>
-            <div style="margin-top:1rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1rem">
-              <p style="color:var(--gray-300);margin-bottom:.6rem">Közösségi média</p>
-              <div style="display:flex;gap:.6rem">
-                <a class="btn secondary" href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a class="btn secondary" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn secondary" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a class="btn secondary" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
+            <p style="margin-top:.6rem;color:#cdd0d7"><b>Email</b><br>krisz@portfolio.hu</p>
+            <p style="margin-top:.6rem;color:#cdd0d7"><b>Telefon</b><br>+36 1 234 5678</p>
+            <p style="margin-top:.6rem;color:#cdd0d7"><b>Helyszín</b><br>Budapest, Magyarország</p>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="container">
+  <footer class="container" style="border-top:1px solid rgba(255,255,255,.08);padding:2rem 0 4rem;margin-top:3rem;color:#cdd0d7">
     <div>© <span id="currentYear"></span> Krisz. Minden jog fenntartva.</div>
     <div>Teljesítmény: <span id="perfBadge">mérés...</span></div>
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="close" id="lightboxClose" aria-label="Bezárás"><i class="fa-solid fa-xmark"></i></button>
-    <div id="lightboxContent"></div>
-  </div>
-
-  <!-- LIVE ANALYTICS CARD -->
-  <aside class="live-card" id="liveCard" aria-live="polite">
-    <header>
-      <h4>Élő látogatottság</h4>
-      <span class="badge" id="liveMode">Betöltés...</span>
-    </header>
-    <div class="live-grid">
-      <div class="live-box">Eddigi látogatók (egyedi)<br><span class="live-num" id="metricUniques">0</span></div>
-      <div class="live-box">Jelenleg online<br><span class="live-num" id="metricOnline">0</span></div>
-      <div class="live-box">Összes látogatás<br><span class="live-num" id="metricTotal">0</span></div>
-      <div class="live-box">Saját session<br><span class="live-num" id="metricSession">0s</span></div>
-    </div>
-    <div class="live-small" id="liveHint"></div>
+  <!-- Bal alsó MINI kártya -->
+  <aside class="mini-left" id="miniCard" aria-live="polite">
+    <div class="mini-title">Összes látogató (egyedi)</div>
+    <div class="mini-value" id="totalVisitors">–</div>
+    <div class="mini-hint" id="miniHint">Inicializálás…</div>
   </aside>
 
-  <!-- 🔧 LÉPÉSEK: ha VALÓDI élő számlálót akarsz (minden látogatóra), töltsd ki a Firebase configot.
-       1) Firebase Console → Create Project → Realtime Database → Start in test mode
-       2) Project settings → Your apps (Web) → add app → másold ide a configot
-       3) Ajánlott Realtime Database rules fejlesztésre (időzített lejárattal!):
-          {
-            "rules": {
-              ".read": true,
-              ".write": true
-            }
-          }
-       4) Élesben állíts szigorúbb szabályokra.
-  -->
+  <!-- 🔧 Firebase config – TÖLTSD KI a sajátoddal a valós idejű globális számlálóhoz.
+       Ha üresen hagyod, "fejlesztői (helyi)" módban fut és csak a saját böngésződben számol. -->
   <script>
-    // --- IDE ILLeszd a SAJÁT configod (ha üres marad, fallback mód indul) ---
     const firebaseConfig = {
       // apiKey: "…",
       // authDomain: "…",
@@ -348,178 +193,69 @@
       // appId: "…"
     };
   </script>
-
-  <!-- Firebase SDK-k (biztonságosan betölthetők akkor is, ha nem használsz Firebase-t) -->
+  <!-- Firebase SDK-k -->
   <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-database-compat.js"></script>
 
   <script>
     // UI apróságok
-    const year = document.getElementById('currentYear'); year.textContent = new Date().getFullYear();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
     const mobileMenu = document.getElementById('mobileMenu');
     document.getElementById('menuBtn').addEventListener('click', ()=>{ mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block'; });
-
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }}) }, { threshold:.15 });
-    document.querySelectorAll('.fade-in, .project, .video, .photo').forEach(el=> io.observe(el));
-
-    // Tabs
-    const tabs = document.querySelectorAll('.tab');
-    const panels = { web: document.getElementById('tab-web'), video: document.getElementById('tab-video'), photo: document.getElementById('tab-photo') };
-    tabs.forEach(t=> t.addEventListener('click', ()=>{
-      tabs.forEach(x=>{x.classList.remove('active'); x.setAttribute('aria-selected','false')});
-      t.classList.add('active'); t.setAttribute('aria-selected','true');
-      Object.values(panels).forEach(p=> p.hidden = true);
-      panels[t.dataset.tab].hidden = false;
-    }));
-
-    // Lightbox
-    const lb = document.getElementById('lightbox');
-    const lbContent = document.getElementById('lightboxContent');
-    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLightbox(); });
-    function openLightbox(node){ lbContent.innerHTML=''; lb.classList.add('open'); document.body.style.overflow='hidden'; lb.setAttribute('aria-hidden','false'); lbContent.appendChild(node); }
-    function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lbContent.innerHTML=''; }
-    document.querySelectorAll('.card.video').forEach(card=>{
-      card.addEventListener('click', ()=>{
-        const src = card.querySelector('template.video-src').content.textContent.trim();
-        const iframe = document.createElement('iframe');
-        iframe.width=960; iframe.height=540;
-        iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen=true; iframe.src=src; openLightbox(iframe);
-      });
-    });
-    document.querySelectorAll('.masonry-item img').forEach(img=>{
-      img.addEventListener('click', ()=>{
-        const big = new Image(); big.src = img.src; big.alt = img.alt; openLightbox(big);
-      });
-    });
-
-    // Contact demo
-    const form = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitBtn');
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Küldés...';
-      await new Promise(r=> setTimeout(r, 900));
-      submitBtn.disabled = false; submitBtn.innerHTML = '<i class="fa-regular fa-paper-plane"></i> Üzenet küldése';
-      formStatus.style.color = '#10b981'; formStatus.textContent = 'Az üzeneted sikeresen elküldve!';
-      form.reset(); setTimeout(()=> formStatus.textContent = '', 4000);
-    });
-
-    // Perf badge
+    const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});
+    document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
     const perfBadge = document.getElementById('perfBadge');
-    window.addEventListener('load', ()=>{
-      const [fcp] = performance.getEntriesByType('paint').filter(p=>p.name==='first-contentful-paint');
-      perfBadge.textContent = fcp ? Math.round(fcp.startTime)+' ms FCP' : 'kész';
-    });
+    window.addEventListener('load', ()=>{ const [fcp] = performance.getEntriesByType('paint').filter(p=>p.name==='first-contentful-paint'); perfBadge.textContent = fcp ? Math.round(fcp.startTime)+' ms FCP' : 'kész'; });
 
-    /* ============ LIVE CARD – Firebase presence + fallback ============ */
-    const liveMode = document.getElementById('liveMode');
-    const liveHint = document.getElementById('liveHint');
-    const metricUniques = document.getElementById('metricUniques');
-    const metricOnline  = document.getElementById('metricOnline');
-    const metricTotal   = document.getElementById('metricTotal');
-    const metricSession = document.getElementById('metricSession');
+    // Kontakt form demo
+    const form = document.getElementById('contactForm'); const formStatus = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e)=>{ e.preventDefault(); formStatus.style.color='#10b981'; formStatus.textContent='Az üzeneted sikeresen elküldve!'; setTimeout(()=>formStatus.textContent='', 4000); });
+
+    /* ---------- Összes látogató MINI kártya (bal alsó) ---------- */
+    const totalVisitorsEl = document.getElementById('totalVisitors');
+    const miniHint = document.getElementById('miniHint');
 
     const UID_KEY = 'krisz-uid';
     let uid = localStorage.getItem(UID_KEY);
     if(!uid){ uid = cryptoRandom(); localStorage.setItem(UID_KEY, uid); }
-    const sessionStart = Date.now();
-    setInterval(()=>{ const sec = Math.round((Date.now()-sessionStart)/1000); metricSession.textContent = sec+'s'; },1000);
 
-    // Próbáljuk Firebase-t indítani, ha van config
-    document.addEventListener('DOMContentLoaded', async ()=>{
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const hasConfig = firebaseConfig && Object.keys(firebaseConfig).length>0;
       try{
-        const hasConfig = firebaseConfig && Object.keys(firebaseConfig).length>0;
         if(hasConfig && window.firebase && firebase.initializeApp){
-          startFirebaseMode();
+          startFirebaseLive();
         }else{
-          startFallbackMode();
+          startLocalDev();
         }
-      }catch(e){
-        startFallbackMode();
-      }
+      }catch(_){ startLocalDev(); }
     });
 
-    function startFirebaseMode(){
-      liveMode.textContent = 'Firebase (valós)';
-      liveHint.textContent = 'Valós idejű globális számláló.';
-
-      // Init
+    function startFirebaseLive(){
+      miniHint.textContent = 'Valós idejű (Firebase)';
       const app = firebase.initializeApp(firebaseConfig);
       const db  = firebase.database();
 
-      // 1) Összes látogatás növelése (transaction)
-      const totalRef = db.ref('metrics/total_visits');
-      totalRef.transaction(current => (current||0) + 1);
-
-      // 2) Egyedi látogatók: tároljuk az uid-t a seen_uids alatt (set true)
+      // Egyedi látogatóként megjelöljük ezt az UID-t
       const seenRef = db.ref('seen_uids/'+uid);
       seenRef.set(true);
 
-      // 3) Online jelenlét: presence/<uid>_<rand> = true; onDisconnect remove
-      const presenceId = uid + '_' + Math.random().toString(36).slice(2);
-      const presenceRef = db.ref('presence/'+presenceId);
-      presenceRef.onDisconnect().remove();
-      presenceRef.set({ ts: firebase.database.ServerValue.TIMESTAMP });
-
-      // Olvasások (valós időben frissülnek)
-      db.ref('presence').on('value', snap=>{
-        const count = snap.exists() ? Object.keys(snap.val()).length : 0;
-        metricOnline.textContent = count;
-      });
+      // Realtime: összes egyedi látogató = seen_uids kulcsainak száma
       db.ref('seen_uids').on('value', snap=>{
-        const uniq = snap.exists() ? Object.keys(snap.val()).length : 0;
-        metricUniques.textContent = uniq;
-      });
-      db.ref('metrics/total_visits').on('value', snap=>{
-        metricTotal.textContent = snap.exists() ? snap.val() : 0;
+        const count = snap.exists() ? Object.keys(snap.val()).length : 0;
+        totalVisitorsEl.textContent = count.toLocaleString('hu-HU');
       });
     }
 
-    function startFallbackMode(){
-      liveMode.textContent = 'Lokális (fejlesztői)';
-      liveHint.textContent = 'Böngészőn belüli becslés – Firebase nélkül.';
-
-      // Összes látogatás (helyi, nem globális)
-      const LS_KEY = 'krisz-analytics-local';
-      const state = readLS() || { total: 0, uniques: [] };
-      if(!state.uniques.includes(uid)){ state.uniques.push(uid); }
-      state.total += 1; saveLS(state);
-      metricTotal.textContent   = state.total;
-      metricUniques.textContent = state.uniques.length;
-
-      // Online jelenlét: BroadcastChannel + storage lock
-      const channel = ('BroadcastChannel' in window) ? new BroadcastChannel('krisz-live') : null;
-      // Aktív tabok követése
-      let tabs = readTabs(); tabs[tabId()] = Date.now(); writeTabs(tabs);
-      updateOnline();
-
-      window.addEventListener('beforeunload', ()=>{
-        const t = readTabs(); delete t[tabId()]; writeTabs(t);
-        if(channel) channel.postMessage({type:'leave', id: tabId()});
-      });
-      setInterval(()=>{ const t = readTabs(); // timeout-oljuk a holt tabokat
-        const now = Date.now(); Object.keys(t).forEach(k=>{ if(now - t[k] > 10000) delete t[k];}); writeTabs(t); updateOnline(); }, 4000);
-
-      if(channel){
-        channel.onmessage = (ev)=>{
-          if(ev.data?.type==='ping'){ const t = readTabs(); t[tabId()] = Date.now(); writeTabs(t); updateOnline(); }
-          if(ev.data?.type==='leave'){ const t = readTabs(); delete t[ev.data.id]; writeTabs(t); updateOnline(); }
-        };
-        setInterval(()=> channel.postMessage({type:'ping'}), 3000);
-      }
-
-      function updateOnline(){
-        const t = readTabs(); metricOnline.textContent = Object.keys(t).length;
-      }
+    // Fejlesztői (helyi) fallback – csak saját böngészőben számol, hogy lásd a működést
+    function startLocalDev(){
+      miniHint.textContent = 'Fejlesztői (helyi) mód';
+      const LS_KEY='krisz-local-uniques';
+      const s = readLS() || { uniques: [] };
+      if(!s.uniques.includes(uid)){ s.uniques.push(uid); saveLS(s); }
+      totalVisitorsEl.textContent = s.uniques.length.toLocaleString('hu-HU');
 
       function readLS(){ try{return JSON.parse(localStorage.getItem(LS_KEY)||'null')}catch(_){return null} }
       function saveLS(v){ try{localStorage.setItem(LS_KEY, JSON.stringify(v))}catch(_){} }
-      function tabId(){ if(!sessionStorage.getItem('krisz-tab-id')) sessionStorage.setItem('krisz-tab-id', cryptoRandom()); return sessionStorage.getItem('krisz-tab-id'); }
-      function readTabs(){ try{return JSON.parse(localStorage.getItem('krisz-live-tabs')||'{}')}catch(_){return{}} }
-      function writeTabs(v){ try{localStorage.setItem('krisz-live-tabs', JSON.stringify(v))}catch(_){} }
     }
 
     function cryptoRandom(){ const arr = new Uint32Array(4); (crypto||window.msCrypto).getRandomValues(arr); return Array.from(arr).map(x=>x.toString(16)).join(''); }
