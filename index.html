@@ -10,6 +10,64 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
+
+    /* --- HAMAROSAN panel (modern) --- */
+.soon-panel{
+  position:relative; padding:56px 24px; text-align:center; overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--line); border-radius:var(--radius);
+  isolation:isolate;
+}
+/* Diagonális "HAMAROSAN" felirat */
+.soon-panel::before{
+  content:"HAMAROSAN";
+  position:absolute; inset:0; display:grid; place-items:center; z-index:1;
+  font-weight:900; letter-spacing:.22em;
+  font-size:clamp(1.4rem,5vw,2.6rem);
+  color:rgba(255,255,255,.75);
+  transform:rotate(-18deg);
+  text-shadow:0 6px 26px rgba(0,0,0,.45);
+  mix-blend-mode:overlay;
+  pointer-events:none;
+}
+/* Fénycsík animáció */
+.soon-panel::after{
+  content:"";
+  position:absolute; inset:-40%;
+  background:linear-gradient(120deg, transparent 40%, rgba(255,255,255,.15), transparent 60%);
+  transform:translateX(-60%) rotate(-18deg);
+  animation:shine 3.8s linear infinite;
+  pointer-events:none; z-index:1;
+}
+@keyframes shine{
+  to{ transform:translateX(60%) rotate(-18deg); }
+}
+.soon-inner{ position:relative; z-index:2; }
+.soon-text{ color:#cfd3db; font-size:1.05rem; margin-bottom:14px; }
+
+/* Email "pill" + copy */
+.email-pill{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 14px; border-radius:999px;
+  background:rgba(255,255,255,.06); border:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.copy-btn{
+  display:inline-grid; place-items:center; width:32px; height:32px;
+  border-radius:8px; border:1px solid var(--line); background:rgba(255,255,255,.05);
+  color:#fff; cursor:pointer;
+}
+.copy-btn:active{ transform:scale(.98); }
+
+/* Kis toast visszajelzés */
+.toast{
+  position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(16px);
+  background:#0f1523; color:#fff; border:1px solid var(--line); border-radius:10px;
+  padding:10px 14px; opacity:0; pointer-events:none; transition:.25s ease;
+}
+.toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --primary:#6366f1;--primary-600:#4f46e5;--primary-300:#a5b4fc;
@@ -239,34 +297,24 @@
   </div>
 </section>
 
-<!-- KAPCSOLAT -->
 <section id="contact">
   <div class="section-header">
     <h2>Kapcsolat</h2>
     <p>Projekted van, együttműködnél vagy kérdésed van? Írj nyugodtan!</p>
   </div>
-  <div class="contact-grid">
-    <!-- Itt az űrlap panel helyett most overlay -->
-    <div class="panel" style="position:relative;padding:40px;text-align:center;overflow:hidden">
-      <!-- Overlay -->
-      <div style="
-        position:absolute;inset:0;
-        display:grid;place-items:center;
-        background:rgba(0,0,0,.55);
-        color:#fff;
-        font-size:2rem;
-        font-weight:800;
-        letter-spacing:.15em;
-        transform:rotate(-20deg);
-        pointer-events:none;
-      ">HAMAROSAN</div>
 
-      <!-- Email fallback -->
-      <div style="position:relative;z-index:2">
-        <p style="font-size:1.1rem;color:#cfd3db">
-          Addig is írj közvetlenül ide:  
-          <br><b style="color:#fff">kovacskrisztofer56@gmail.com</b>
-        </p>
+  <div class="contact-grid">
+    <!-- Modern "HAMAROSAN" panel + email pill -->
+    <div class="soon-panel">
+      <div class="soon-inner">
+        <p class="soon-text">Az űrlap hamarosan érkezik. Addig is elérsz itt:</p>
+        <div class="email-pill">
+          <i class="fa-regular fa-envelope"></i>
+          <b>kovacskrisztofer56@gmail.com</b>
+          <button class="copy-btn" id="copyEmail" aria-label="Email cím másolása">
+            <i class="fa-regular fa-clone"></i>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -280,6 +328,10 @@
   </div>
 </section>
 
+<!-- Toast -->
+<div class="toast" id="toast">Másolva a vágólapra</div>
+
+
   </main>
 
   <footer class="container">
@@ -287,6 +339,27 @@
     <div>Teljesítmény: <span id="perf">mérés…</span></div>
   </footer>
   <script>
+
+  (function(){
+    const btn = document.getElementById('copyEmail');
+    const toast = document.getElementById('toast');
+    if(!btn) return;
+    btn.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText('kovacskrisztofer56@gmail.com');
+        toast.classList.add('show');
+        setTimeout(()=> toast.classList.remove('show'), 1400);
+      }catch(e){
+        toast.textContent = 'Nem sikerült a másolás';
+        toast.classList.add('show');
+        setTimeout(()=> {
+          toast.classList.remove('show');
+          toast.textContent = 'Másolva a vágólapra';
+        }, 1600);
+      }
+    });
+  })();
+
     // UI apróságok
     const yearEl=document.getElementById('year');yearEl.textContent=new Date().getFullYear();
     const perfEl=document.getElementById('perf');window.addEventListener('load',()=>{const [fcp]=performance.getEntriesByType('paint').filter(p=>p.name==='first-contentful-paint');perfEl.textContent=fcp?Math.round(fcp.startTime)+' ms FCP':'kész'})
